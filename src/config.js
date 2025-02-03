@@ -30,29 +30,6 @@ function getConfig({ severity }) {
   return {
     plugins: ['stylelint-order'],
     rules: {
-      'declaration-empty-line-before': [
-        'always',
-        {
-          except: ['first-nested'],
-          ignore: [
-            'after-declaration',
-            'after-comment',
-            'inside-single-line-block'
-          ],
-          severity
-        }
-      ],
-      'at-rule-empty-line-before': [
-        'always',
-        {
-          ignore: [
-            'first-nested',
-            'blockless-after-same-name-blockless',
-            'after-comment'
-          ],
-          severity
-        }
-      ],
       'order/order': [
         [
           { type: 'at-rule', name: 'import' },
@@ -71,8 +48,6 @@ function getConfig({ severity }) {
             selector: /^&::[\w-]+/,
             hasBlock: true
           },
-          'rules',
-          { type: 'at-rule', name: 'media', hasBlock: true }
         ],
         {
           severity
